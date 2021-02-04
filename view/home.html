@@ -3,11 +3,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ @title }}</title>
 </head>
 <body>
-    <h1>This is my home page for view home page</h1>
+    <h1>{{ @title}}</h1>
+    <p>{{ @username}} is just login with {{ @password }}</p>
+
+    <h3>Temperature</h3>
+    <p>Fahrenheit temp: {{ @ftemp }}</p>
+    <p>Celsius temp : {{ round((@ftemp - 32) * (5/9),2) }}</p>
+
+    <p>I like {{ @color }}</p>
+
+    <h3>Circumfence</h3>
+    <p>Radius: {{ @radius }}</p>
+    <p>Circumfence: {{ 2 * 3.14* @radius }}</p>
+
+    <h3>Fruit</h3>
+    <ul>
+        <repeat group="{{ @fruits }}" value="{{ @fruits }}">
+            <li>{{ @fruits }}</li>
+        </repeat>
+    </ul>
+
+    <h3>Salaries</h3>
+    <repeat group="{{ @salaries }}" key="{{ @name }}" value="{{ @salaries }}">
+        <p>{{ @name }} earns {{ @salaries }}</p>
+        <check if="{{ @salaries > 200000}}">
+            <p>Wow, your are RICH</p>
+        </check>
+    </repeat>
+
+    <h3>Deserts</h3>
+    <repeat group="{{ @deserts }}" key="{{ @name }}" value="{{ @deserts }}">
+        <p>{{ @name }}: {{ @deserts }}</p>
+    </repeat>
+
+    <h3>Conditionals</h3>
+    <check if="{{ @num == 5}}">
+        <true>
+            <p>Yes</p>
+        </true>
+        <false>
+            <p>No</p>
+        </false>
+    </check>
+
+
 
 </body>
 </html>
