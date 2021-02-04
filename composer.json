@@ -1,0 +1,14 @@
+{
+  "name": "ttran/328/week5",
+  "authors":
+  [
+    {
+      "name": "Thanh Tran",
+      "email": "ttran112@mail.greenriver.edu"
+    }
+  ],
+  "require":
+  {
+    "bcosca/fatfree": "dev-master"
+  }
+}
